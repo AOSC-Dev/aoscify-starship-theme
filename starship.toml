@@ -1,0 +1,25 @@
+format = "$username$hostname \\[ [$directory](white)${custom.git} \\] [\\$](bold green) "
+
+add_newline = false
+
+[username]
+format = "[$user](bold green)"
+disabled = false
+show_always = true
+
+[hostname]
+ssh_only = false
+format = '@$hostname'
+disabled = false
+
+[directory]
+format = "$path"
+
+[git_status]
+stashed = ''
+disabled=true
+
+[custom.git]
+command = "~/.config/starship-git.sh || true"
+when = "true"
+format = "$output"
