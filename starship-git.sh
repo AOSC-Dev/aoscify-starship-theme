@@ -7,7 +7,7 @@ if command -v bash-git-status 2>&1>/dev/null; then
                         echo -e "\01\e[1m\02@\01\e[0;32m\0002$bgs\01\e[0m\02"
                 ;;
                 6)
-                        echo -e "\01\e[1m\02@\01$IRED\0002$bgs\01\e[0m\02"
+                        echo -e "\01\e[1m\02@\01\e[0;31m\0002$bgs\01\e[0m\02"
                 ;;
                 7)
                         echo -e "\01\e[1m\02@\01\e[0;35m\0002$bgs\01\e[0m\02"
