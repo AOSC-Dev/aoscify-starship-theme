@@ -14,6 +14,7 @@ disabled = false
 
 [directory]
 format = "$path"
+truncation_length = 1
 
 [git_status]
 stashed = ''
