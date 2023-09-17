@@ -1,4 +1,4 @@
-format = "$username$hostname \\[ [$directory](white)${custom.git} \\] [\\$](bold green) "
+format = "$env_var$username$hostname \\[ [$directory](white)${custom.git} \\] [\\$](bold green) "
 
 add_newline = false
 
@@ -24,3 +24,7 @@ disabled=true
 command = "~/.config/starship-git.sh || true"
 when = "true"
 format = "$output"
+
+[env_var.SSH_CONNECTION]
+format = "[\\(ssh\\)](bold yellow)"
+disabled = false
