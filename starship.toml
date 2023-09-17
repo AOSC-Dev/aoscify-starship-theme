@@ -1,11 +1,16 @@
-format = "$env_var$username$hostname \\[ [$directory](white)${custom.git} \\] [\\$](bold green) "
+format = "$env_var${custom.username}${custom.username_root}$hostname \\[ [$directory](white)${custom.git} \\] $status "
 
 add_newline = false
 
-[username]
-format = "[$user](bold green)"
-disabled = false
-show_always = true
+[custom.username]
+command = "whoami"
+format = "[$output](bold green)"
+when = ''' test $EUID != 0 '''
+
+[custom.username_root]
+command = "whoami"
+format = "[$output](bold red)"
+when = ''' test $EUID = 0 '''
 
 [hostname]
 ssh_only = false
@@ -27,4 +32,15 @@ format = "$output"
 
 [env_var.SSH_CONNECTION]
 format = "[\\(ssh\\)](bold yellow)"
+disabled = false
+
+[status]
+format = '$symbol'
+symbol = "[!](bold yellow)"
+success_symbol = "[\\$](bold green)"
+not_executable_symbol = "[!](bold yellow)"
+not_found_symbol = "[?](cyan)"
+sigint_symbol = "[!](bold yellow)"
+signal_symbol = "[!](bold yellow)"
+map_symbol = true
 disabled = false
