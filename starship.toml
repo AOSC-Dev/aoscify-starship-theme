@@ -1,16 +1,12 @@
-format = "$env_var${custom.username}${custom.username_root}$hostname \\[ [$directory](white)${custom.git} \\] $status "
+format = "$env_var$username${custom.username_root}$hostname \\[ [$directory](white)${custom.git} \\] $status "
 
 add_newline = false
 
-[custom.username]
-command = "whoami"
-format = "[$output](bold green)"
-when = ''' test $EUID != 0 '''
-
-[custom.username_root]
-command = "whoami"
-format = "[$output](bold red)"
-when = ''' test $EUID = 0 '''
+[username]
+format = "[$user]($style)"
+style_user = "bold green"
+style_root = "bold red"
+show_always = true
 
 [hostname]
 ssh_only = false
